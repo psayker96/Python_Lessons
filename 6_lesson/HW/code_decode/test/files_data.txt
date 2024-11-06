@@ -1,0 +1,1 @@
+[{"name": "new_image.png", "size": 24741}, {"name": "graph.png", "size": 24706}, {"name": "1.txt", "size": 14}, {"name": "2.txt", "size": 21}]
