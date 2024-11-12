@@ -19,19 +19,19 @@ def get_all_data():
         data.append(info_about_file(filename))
     return data
 
-filedata = None
-
 def coding_menu():
-while True:
-    choice = input("1 кодувати q вихід:")
-    if choice == "1":
-        filedata = get_all_data()
-        with open("files_data.txt","w") as file:
-            file.write(dumps(filedata))
-        result_file = input("Введіть назву файлу куди необхідно зберегти інформацію:")
-        with open(result_file,"wb") as result_file:
-            for data in filedata:
-                with open(data["name"],"rb") as file:
-                    result_file.write(file.read())
-    if choice == "q":
-        break
+    filedata = None
+    base_path = "coding/"
+    while True:
+        choice = input("1 кодувати q вихід:")
+        if choice == "1":
+            filedata = get_all_data()
+            with open(base_path + "files_data.txt","w") as file:
+                file.write(dumps(filedata))
+            result_file = input("Введіть назву файлу куди необхідно зберегти інформацію:")
+            with open(base_path + result_file,"wb") as result_file:
+                for data in filedata:
+                    with open(data["name"],"rb") as file:
+                        result_file.write(file.read())
+        if choice == "q":
+            break
